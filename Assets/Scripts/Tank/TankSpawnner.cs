@@ -14,14 +14,10 @@ public class TankSpawnner : MonoBehaviour
     }
     public List<Tank> tankList;
     [SerializeField] private TankView tankView;
-    void Start()
-    {
-        CreateTank();
-    }
 
-    private void CreateTank()
+    public void CreateTank(int i )
     {
-        TankModel tankModel = new TankModel(tankList[1].movementSpeed , tankList[1].rotateSpeed , tankList[1].tankType , tankList[0].color);
+        TankModel tankModel = new TankModel(tankList[i].movementSpeed , tankList[i].rotateSpeed , tankList[i].tankType , tankList[i].color);
         TankController tankController = new TankController(tankModel , tankView);
     }
 }
