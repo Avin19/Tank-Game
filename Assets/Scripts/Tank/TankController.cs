@@ -12,23 +12,12 @@ public class TankController
     public TankController(TankModel _tankModel , TankView _tankView)
     {
 
-
-        /*
-        This is a constructor . When it is created it is carrying the Tankview and tankModel reference 
-
-        Here tankView and tankModel's reference are stored . After storing then this created 
-
-
-
-        */
         tankModel = _tankModel;
-        tankModel.SetTankController(this);
         tankView = GameObject.Instantiate<TankView>(_tankView);
-      
-      
         tankView.SetTankController(this);
+        tankModel.SetTankController(this);
         rb = tankView.GetRigidbody();
-        
+        tankView.ChangeColor(tankModel.color);
 
     }
     public void Move(float movement, float movementSpeed)
@@ -41,6 +30,11 @@ public class TankController
        Vector3 vector = new Vector3(0f, rotate*rotateSpeed ,0f);
        Quaternion deltaRotation = Quaternion.Euler(vector*Time.deltaTime);
        rb.MoveRotation(rb.rotation *deltaRotation);
+    }
+
+    public TankModel GetTankModel()
+    {
+        return tankModel;
     }
    
 }

@@ -9,18 +9,25 @@ public class TankView :MonoBehaviour
     private float rotation;
 
    private Rigidbody rb;
+
+   [SerializeField]private MeshRenderer[] childs;
     private void Awake() {
         rb = GetComponent<Rigidbody>();
+    }
+    private void Start() {
+        GameObject cam = GameObject.Find("Main Camera");
+        cam.transform.SetParent(transform);
+        cam.transform.position= new Vector3(0f, 2.3f,-5f);
     }
     private void Update() {
         Movement();
         if(movement!= 0)
         {
-            tankController.Move(movement , 30f);
+            tankController.Move(movement , tankController.GetTankModel().movementSpeed);
         }
         if(rotation != 0 )
         {
-            tankController.Rotate(rotation,30f);
+            tankController.Rotate(rotation,tankController.GetTankModel().rotationSpeed);
         }
     }
     private void Movement()
@@ -36,5 +43,12 @@ public class TankView :MonoBehaviour
     public Rigidbody GetRigidbody()
     {
         return rb;
+    }
+    public void ChangeColor(Material color)
+    {
+        for (int i =0 ; i < childs.Length ; i++)
+        {
+            childs[i].material = color;
+        }
     }
 }
