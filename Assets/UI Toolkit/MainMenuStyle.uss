@@ -1,0 +1,15 @@
+.Cell {
+    align-items: center;
+    align-self: center;
+    justify-content: space-around;
+}
+
+.text {
+    font-size: 30px;
+    -unity-font: url('project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&guid=ae9042f51b1e7c145bea58b4a0ceb4d9&type=3#NotInter-Regular');
+    -unity-font-style: bold;
+    color: rgb(255, 255, 255);
+    align-self: center;
+    align-items: center;
+    justify-content: space-between;
+}
