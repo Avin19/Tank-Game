@@ -1,9 +1,15 @@
 using UnityEngine;
+using TMPro;
+
 
 
 public class TankView :MonoBehaviour
 {
     private TankController tankController;
+    [SerializeField] private Transform shellSpawnPosition;
+    [SerializeField] private GameObject pfShell;
+    [SerializeField] private TextMeshProUGUI healthText;
+
 
     private float movement ;
     private float rotation;
@@ -34,6 +40,10 @@ public class TankView :MonoBehaviour
     {
         movement = Input.GetAxis("Vertical");
         rotation = Input.GetAxis("Horizontal");   
+    }
+    private void FireShell()
+    {
+
     }
 
     public void SetTankController(TankController tankController)
