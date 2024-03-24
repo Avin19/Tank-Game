@@ -1,18 +1,22 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=271441bccfbcffb4a8c70e3541bf2c1a&amp;type=3#MainMenuStyle" />
-    <ui:Label tabindex="-1" text="Tank Game" parse-escape-sequences="true" display-tooltip-when-elided="true" class="text" />
-    <ui:VisualElement name="Container" style="flex-grow: 1; flex-direction: row; align-self: center; justify-content: space-between; background-color: rgba(255, 164, 0, 0);">
-        <ui:VisualElement class="Cell" style="flex-grow: 1; flex-direction: column;">
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Greentankbtn" class="text" style="background-image: url(&apos;project://database/Assets/Sprites/Skins/GreenTankSkin.png?fileID=2800000&amp;guid=ba837d6df8b5c634d8bfd12eccb48d50&amp;type=3#GreenTankSkin&apos;); left: 0; width: 200px; height: 300px;" />
-            <ui:Label tabindex="-1" text="Green Tank" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GreenButton" class="text" />
+    <ui:VisualElement name="Title" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Sprite/Title.psd?fileID=2800000&amp;guid=a14d78bd79cbc8e46bbf32f8a36b8d9c&amp;type=3#Title&apos;); width: auto; height: 132px; position: relative;" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; flex-direction: row; align-self: center; justify-content: space-between; background-color: rgba(255, 164, 0, 0); height: 339px;">
+        <ui:VisualElement name="menu" style="flex-grow: 1; width: 312px; justify-content: space-around; align-self: center; align-items: stretch; height: 315px;">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="playbtn" style="background-image: url(&apos;project://database/Assets/Sprite/Play.psd?fileID=2800000&amp;guid=d5ea98460772263419db3aa544ccdd1f&amp;type=3#Play&apos;); width: auto; height: 102px; background-color: rgba(188, 188, 188, 0); align-items: auto; align-self: auto;" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="settingbtn" style="background-image: url(&apos;project://database/Assets/Sprite/Setting.psd?fileID=2800000&amp;guid=ee8a88dd8ab755e4e88ad8d309a0e924&amp;type=3#Setting&apos;); background-color: rgba(188, 188, 188, 0); height: 103px; align-self: auto; justify-content: space-between; align-items: auto;" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="quitbtn" style="background-image: url(&apos;project://database/Assets/Sprite/Quit.psd?fileID=2800000&amp;guid=7114043904609b8449e1cc16dca86017&amp;type=3#Quit&apos;); background-color: rgba(188, 188, 188, 0); height: 97px; align-self: auto; justify-content: space-between; align-items: auto;" />
         </ui:VisualElement>
-        <ui:VisualElement class="Cell" style="flex-grow: 1;">
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Bluetankbtn" class="text" style="background-image: url(&apos;project://database/Assets/Sprites/Skins/BlueTankSkin.png?fileID=2800000&amp;guid=3f792f7935ac1064a93f7e320a6ab0df&amp;type=3#BlueTankSkin&apos;); width: 200px; height: 300px;" />
-            <ui:Label tabindex="-1" text="Blue Tank" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BlueButton" class="text" />
-        </ui:VisualElement>
-        <ui:VisualElement class="Cell" style="flex-grow: 1;">
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Redtankbtn" class="text" style="background-image: url(&apos;project://database/Assets/Sprites/Skins/RedTankSkin.png?fileID=2800000&amp;guid=94131e5bdcae7bd48bc953ba78482034&amp;type=3#RedTankSkin&apos;); width: 200px; height: 300px;" />
-            <ui:Label tabindex="-1" text="Red Tank" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RedButton" class="text" />
+        <ui:VisualElement name="tankcontainer" style="flex-grow: 1; flex-direction: row; align-items: flex-start;">
+            <ui:VisualElement class="Cell" style="flex-grow: 1; flex-direction: column;">
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Greentankbtn" class="text" style="background-image: url(&apos;project://database/Assets/Sprites/Skins/GreenTankSkin.png?fileID=2800000&amp;guid=ba837d6df8b5c634d8bfd12eccb48d50&amp;type=3#GreenTankSkin&apos;); left: 0; width: 200px; height: 300px;" />
+            </ui:VisualElement>
+            <ui:VisualElement class="Cell" style="flex-grow: 1;">
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Bluetankbtn" class="text" style="background-image: url(&apos;project://database/Assets/Sprites/Skins/BlueTankSkin.png?fileID=2800000&amp;guid=3f792f7935ac1064a93f7e320a6ab0df&amp;type=3#BlueTankSkin&apos;); width: 200px; height: 300px;" />
+            </ui:VisualElement>
+            <ui:VisualElement class="Cell" style="flex-grow: 1;">
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Redtankbtn" class="text" style="background-image: url(&apos;project://database/Assets/Sprites/Skins/RedTankSkin.png?fileID=2800000&amp;guid=94131e5bdcae7bd48bc953ba78482034&amp;type=3#RedTankSkin&apos;); width: 200px; height: 300px;" />
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

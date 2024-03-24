@@ -11,13 +11,14 @@ public class TankSpawnner : MonoBehaviour
         public float rotateSpeed;
         public TankTypes tankType;
         public Material color;
+        public float shellSpeed;
     }
     public List<Tank> tankList;
     [SerializeField] private TankView tankView;
 
     public void CreateTank(int i )
     {
-        TankModel tankModel = new TankModel(tankList[i].movementSpeed , tankList[i].rotateSpeed , tankList[i].tankType , tankList[i].color);
+        TankModel tankModel = new TankModel(tankList[i].movementSpeed , tankList[i].rotateSpeed , tankList[i].tankType , tankList[i].color, tankList[i].shellSpeed);
         TankController tankController = new TankController(tankModel , tankView);
     }
 }

@@ -9,6 +9,7 @@ public class TankView :MonoBehaviour
     [SerializeField] private Transform shellSpawnPosition;
     [SerializeField] private GameObject pfShell;
     [SerializeField] private TextMeshProUGUI healthText;
+    private float shellSpeed;
 
 
     private float movement ;
@@ -21,7 +22,7 @@ public class TankView :MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
     private void Start() {
-        GameObject cam = GameObject.Find("Main Camera");
+        GameObject cam = GameObject.FindGameObjectWithTag("MainCamera");
         cam.transform.SetParent(transform);
         cam.transform.position= new Vector3(0f, 2.3f,-5f);
     }
@@ -35,7 +36,9 @@ public class TankView :MonoBehaviour
         {
             tankController.Rotate(rotation,tankController.GetTankModel().rotationSpeed);
         }
+        FireShell();
     }
+   
     private void Movement()
     {
         movement = Input.GetAxis("Vertical");
@@ -43,7 +46,11 @@ public class TankView :MonoBehaviour
     }
     private void FireShell()
     {
-
+        if(Input.GetMouseButtonDown(0))
+        {
+           GameObject shell= Instantiate(pfShell,shellSpawnPosition.position,transform.rotation);
+           shell.GetComponent<ShellCollider>().ShellSpped(shellSpeed);
+        }
     }
 
     public void SetTankController(TankController tankController)
@@ -60,5 +67,9 @@ public class TankView :MonoBehaviour
         {
             childs[i].material = color;
         }
+    }
+    public void SetShellSpeed(float sheelSpeed)
+    {
+        this.shellSpeed =sheelSpeed;
     }
 }
